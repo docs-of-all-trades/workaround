@@ -4,11 +4,10 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Embrace the Metaverse',
+  tagline: 'Join our community',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -20,20 +19,13 @@ const config = {
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
-  plugins: [
-    async function myPlugin(context, options) {
-      return {
-        name: "docusaurus-tailwindcss",
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require("tailwindcss"));
-          postcssOptions.plugins.push(require("autoprefixer"));
-          return postcssOptions;
-        },
-      };
-    },
-  ],
-
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
 
   presets: [
     [
@@ -44,10 +36,9 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -59,69 +50,159 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Docs',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'dSphere',
+          src: 'img/dSphere-logo.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Quickstart',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Tutorials',
           },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'SDK',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'API Reference',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'FAQ',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Glossary',
+          },
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Whats new',
+          },
+          //{to: '/blog', label: 'Blog', position: 'left'},
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Platform',
             items: [
               {
-                label: 'Tutorial',
+                label: 'NFT Marketplace',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Pricing',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Cinderella',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Solutions',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Game Publishers',
+                to: '/docs/intro',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'NFT Publishers & Marketplace',
+                to: '/docs/intro',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Web3 & Branding',
+                to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'More',
+            title: "Socials/Community",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: "Twitter",
+                href: "https://wappier.com/vision-mission-and-company-culture",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "Telegram",
+                href: "https://wappier.com/about-us",
+              },
+              {
+                label: "Discord",
+                href: "https://wappier.com/manifesto",
+              },
+              {
+                label: "Medium",
+                href: "https://wappier.com/join-us",
+              },
+              {
+                label: "Facebook",
+                href: "https://wappier.com/blog",
+              },
+              {
+                label: "YouTube",
+                href: "https://wappier.com/blog",
+              },
+            ],
+          },
+          {
+            title: "About us",
+            items: [
+              {
+                label: "Our vision",
+                href: "https://wappier.com/vision-mission-and-company-culture",
+              },
+              {
+                label: "Our story",
+                href: "https://wappier.com/about-us",
+              },
+              {
+                label: "Our mantra",
+                href: "https://wappier.com/manifesto",
+              },
+              {
+                label: "Become a Wappizen",
+                href: "https://wappier.com/join-us",
+              },
+              {
+                label: "Blog",
+                href: "https://wappier.com/blog",
+              },
+              {
+                label: "Newsletter",
+                href: "https://wappier.com/blog",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        logo: {
+          alt: 'Wappier',
+          src: 'img/wappier-logo-full.png',
+          href: 'https://wappier.com',
+      },
+        copyright: `Copyright © ${new Date().getFullYear()} Wappier . All Rights reserved | info@wappier.com`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -131,3 +212,4 @@ const config = {
 };
 
 module.exports = config;
+
